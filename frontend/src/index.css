@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-900 text-slate-100 min-h-screen antialiased;
+    @apply bg-navy-950 text-brand-100 min-h-screen antialiased;
   }
 }
 
@@ -14,12 +14,12 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #0e1120;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #3d2715;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #50223C;
 }

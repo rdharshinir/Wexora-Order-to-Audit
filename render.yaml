@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: wexora-erp
+    runtime: python
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.10.12"
+      - key: NODE_VERSION
+        value: "18"
+      - key: WEXORA_DB_PATH
+        value: "/opt/render/project/src/wexora.db"

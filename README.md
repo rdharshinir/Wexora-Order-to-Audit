@@ -18,18 +18,7 @@
 
 ---
 
-## Contents
 
-1. [Overview](#1-overview)
-2. [Quick start](#2-quick-start)
-3. [Architecture](#3-architecture)
-4. [Stack and justification](#4-stack-and-justification)
-5. [Features by tier](#5-features-by-tier)
-6. [Benchmark results](#6-benchmark-results)
-7. [Costing method](#7-costing-method)
-8. [Assumptions and known gaps](#8-assumptions-and-known-gaps)
-9. [Repository layout](#9-repository-layout)
-10. [Documentation](#10-documentation)
 
 ---
 
@@ -95,20 +84,9 @@ python backend/tests/test_units_gst_immutability.py # unit conversion, GST maths
 
 ## 3. Architecture
 
-![WEXORA architecture layers](docs/architecture.svg)
+<img width="724" height="706" alt="image" src="https://github.com/user-attachments/assets/b8278cda-9f52-42b6-9552-683d07ece076" />
 
-The system is built in layers, and each layer only talks to the one below it.
 
-| Layer | Responsibility |
-| :--- | :--- |
-| **Clients** | Salesman mobile app (offline-capable), admin and production screens, read-only auditor and owner views |
-| **API** | Login, role-based access, idempotent order submission |
-| **Business logic** | Sales, production, purchasing, costing and GST as pure Python services |
-| **Posting engine** | The only code that writes stock and audit rows, so no screen or report can alter a balance directly |
-| **Storage** | Append-only stock ledger, documents and masters, hash-chained audit log |
-| **Reports** | Balances, GST, variance, ageing and the audit pack, all derived from stored data |
-
----
 
 ## 4. Stack and justification
 
@@ -205,23 +183,11 @@ All figures below come from the live run of the Section 5 scenario.
 
 ---
 
-## 8. Assumptions and known gaps
 
-**Assumptions**
 
-1. The factory is in Tamil Nadu, so sales to other states are inter-state (IGST).
-2. GST is 5% on benchmark products.
-3. Damaged pouches are issued from stock and charged to the run.
-4. Overheads are allocated per good packet.
-5. The carton figure in the scenario (9 cartons for 188 packets at 20 per carton) is recorded as given, although 188 packets would normally need 10 cartons.
 
-**Known gaps**
 
-> Fill this in before submitting, for example: what is not implemented, what you would build next, and any limits of SQLite for multi-user use.
-
----
-
-## 9. Repository layout
+##  Repository layout
 
 ```
 nit-wexora/
@@ -259,12 +225,3 @@ nit-wexora/
 ├── pytest.ini
 └── README.md
 ```
-
----
-
-## 10. Documentation
-
-| Document | Contents |
-| :--- | :--- |
-| [`docs/DESIGN.md`](docs/DESIGN.md) | Data model, stock and BOM computation, costing and valuation |
-| [`docs/BENCHMARK_WALKTHROUGH.md`](docs/BENCHMARK_WALKTHROUGH.md) | Script for the 8-minute demo video and the check matrix |

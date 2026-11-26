@@ -10,41 +10,20 @@ from app.database import init_db, get_db
 from app.ledger import LedgerEngine, AuditEngine
 
 def seed_benchmark_data(db_path=None):
-    init_db(db_path)
+    from app.database import DB_PATH
+    actual_path = db_path or DB_PATH
+    # If file exists, remove to ensure clean schema and triggers initialization
+    if os.path.exists(actual_path):
+        try:
+            os.remove(actual_path)
+        except Exception:
+            pass
+
+    init_db(actual_path)
     now_iso = datetime.now(timezone.utc).isoformat()
 
-    with get_db(db_path) as conn:
+    with get_db(actual_path) as conn:
         cursor = conn.cursor()
-
-        # Clear existing test data
-        cursor.execute("DELETE FROM stock_ledger")
-        cursor.execute("DELETE FROM audit_log")
-        cursor.execute("DELETE FROM payment_allocations")
-        cursor.execute("DELETE FROM payments")
-        cursor.execute("DELETE FROM dispatch_lines")
-        cursor.execute("DELETE FROM dispatches")
-        cursor.execute("DELETE FROM invoice_lines")
-        cursor.execute("DELETE FROM invoices")
-        cursor.execute("DELETE FROM invoice_sequences")
-        cursor.execute("DELETE FROM stock_reservations")
-        cursor.execute("DELETE FROM sales_order_lines")
-        cursor.execute("DELETE FROM sales_orders")
-        cursor.execute("DELETE FROM run_cost_snapshots")
-        cursor.execute("DELETE FROM run_overheads")
-        cursor.execute("DELETE FROM run_outputs")
-        cursor.execute("DELETE FROM run_issues")
-        cursor.execute("DELETE FROM production_runs")
-        cursor.execute("DELETE FROM purchase_lines")
-        cursor.execute("DELETE FROM purchases")
-        cursor.execute("DELETE FROM bom_lines")
-        cursor.execute("DELETE FROM boms")
-        cursor.execute("DELETE FROM products")
-        cursor.execute("DELETE FROM items")
-        cursor.execute("DELETE FROM suppliers")
-        cursor.execute("DELETE FROM customers")
-        cursor.execute("DELETE FROM unit_conversions")
-        cursor.execute("DELETE FROM units")
-        cursor.execute("DELETE FROM users")
 
         # 1. Users
         users = [

@@ -20,7 +20,7 @@ from seed import seed_benchmark_data
 
 app = FastAPI(
     title="WEXORA - Order-to-Audit ERP",
-    description="Every Order. Every Transaction. Complete Transparency. Built for NIT Tiruchirappalli shortlisting.",
+    description="Every Order. Every Transaction. Complete Transparency",
     version="1.0.0"
 )
 

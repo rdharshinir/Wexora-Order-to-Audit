@@ -133,9 +133,7 @@ export default function App() {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-xl tracking-tight text-white">WEXORA</span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 font-semibold">
-                  NIT Tiruchirappalli
-                </span>
+               
               </div>
               <p className="text-xs text-slate-400">
                 Every Order. Every Transaction. Complete Transparency.

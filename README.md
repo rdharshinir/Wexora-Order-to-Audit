@@ -6,7 +6,6 @@
 
 *Every Order. Every Transaction. Complete Transparency.*
 
-**Centre for Digital Infrastructure, NIT Tiruchirappalli · Internship shortlisting task**
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white)
@@ -18,18 +17,7 @@
 
 ---
 
-## Contents
 
-1. [Overview](#1-overview)
-2. [Quick start](#2-quick-start)
-3. [Architecture](#3-architecture)
-4. [Stack and justification](#4-stack-and-justification)
-5. [Features by tier](#5-features-by-tier)
-6. [Benchmark results](#6-benchmark-results)
-7. [Costing method](#7-costing-method)
-8. [Assumptions and known gaps](#8-assumptions-and-known-gaps)
-9. [Repository layout](#9-repository-layout)
-10. [Documentation](#10-documentation)
 
 ---
 

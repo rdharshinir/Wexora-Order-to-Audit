@@ -8,6 +8,6 @@ services:
       - key: PYTHON_VERSION
         value: "3.10.12"
       - key: NODE_VERSION
-        value: "18"
+        value: "20"
       - key: WEXORA_DB_PATH
         value: "/opt/render/project/src/wexora.db"
